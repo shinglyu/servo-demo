@@ -28,11 +28,11 @@ case $OPT in
     ./mach run -w -r -Z wr-stats $BASE_URL/spheres.html
     ;;
   3)
-    firefox spheres.html&
+    firefox $BASE_URL/spheres.html&
     ./mach run -w -r $BASE_URL/spheres.html
     ;;
   4)
-    firefox transparent_rects.html &
+    firefox $BASE_URL/transparent_rects.html &
     ./mach run -w -r $BASE_URL/transparent_rects.html 
     ;;
   5)
