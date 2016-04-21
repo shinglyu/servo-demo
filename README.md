@@ -22,6 +22,9 @@ chmod u+x demo.sh # make it executable
 ./demo.sh
 ```
 
+## Disclaimer
+Servo it still in development, so comparing them against existing browsers may not be fair. 
+
 ## Credit: 
 * [pcwalton](https://github.com/pcwalton/webrender-demos)
 * [larsbergstrom](https://github.com/larsbergstrom/webrender-demos/tree/use_raf)

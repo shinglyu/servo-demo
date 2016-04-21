@@ -6,8 +6,8 @@ echo '----------------------------'
 echo '==WebRender=='
 echo '  1) WebRender framerate on real website'
 echo '  2) WebRender framerate on spheres'
-echo '  3) WebRender on spheres v.s. Gecko'
-echo '  4) WebRender on transparent rects v.s. Gecko'
+echo "  3) WebRender on spheres v.s. other browser (WARNING: don't show this in public)"
+echo "  4) WebRender on transparent rects v.s. other browser (WARNING: don't show this in public)"
 echo ''
 echo '==Parallel Painting=='
 echo '  5) Parallel painting'
@@ -25,6 +25,7 @@ echo 'Please select (ENTER):'
 SERVO_CMD="./servo/servo"
 BASE_URL="http://localhost:8000"
 DEMO_URL="$BASE_URL/index.html"
+OTHER_BROWSER="" # The browser you want to compare
 # DEMO_URL="https://en.wikipedia.org/wiki/Main_Page"
 
 read OPT
@@ -36,11 +37,11 @@ case $OPT in
     $SERVO_CMD -w -Z wr-stats $BASE_URL/spheres.html
     ;;
   3)
-    firefox $BASE_URL/spheres.html &
+    $OTHER_BROWSER $BASE_URL/spheres.html &
     $SERVO_CMD -w $BASE_URL/spheres.html
     ;;
   4)
-    firefox $BASE_URL/transparent_rects.html &
+    $OTHER_BROWSER $BASE_URL/transparent_rects.html &
     $SERVO_CMD -w $BASE_URL/transparent_rects.html 
     ;;
   5)
