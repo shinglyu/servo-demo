@@ -2,6 +2,7 @@
 
 # TODO: depolyment script
 echo 'Servo Demos'
+echo '(Remember to start the local server)'
 echo '----------------------------'
 echo '==WebRender=='
 echo '  1) WebRender framerate on real website'
@@ -25,7 +26,8 @@ echo 'Please select (ENTER):'
 SERVO_CMD="./servo/servo"
 BASE_URL="http://localhost:8000"
 DEMO_URL="$BASE_URL/index.html"
-OTHER_BROWSER="" # The browser you want to compare
+# WARNING: Don't comare with other browser in public without leagl approval
+OTHER_BROWSER="x-www-browser" # The browser you want to compare
 # DEMO_URL="https://en.wikipedia.org/wiki/Main_Page"
 
 read OPT
@@ -57,11 +59,11 @@ case $OPT in
     $SERVO_CMD -y 1 -Z show-parallel-layout $DEMO_URL
     ;;
   9)
-    print "cd to your servo repository, and run"
-    print "./mach -r -b $DEMO_URL"
+    echo "cd to your servo repository, and run"
+    echo "./mach -r -b $DEMO_URL"
     ;;
   *)
-    print "Not a valid option"
+    echo "Not a valid option"
     ;;
 esac
 
